@@ -12,16 +12,19 @@ class BoardsController < ApplicationController
 
   
   def new
-    @board = current_user.board.new
+    @board = current_user.boards.new
+    render partial: 'boards/form'
+
   end
 
   
   def edit
+    render partial: 'boards/form'
   end
 
   
   def create
-    @board = current_user.board.new(board_params)
+    @board = current_user.boards.new(board_params)
     if @board.save
       redirect_to boards_path
     else
@@ -47,7 +50,7 @@ class BoardsController < ApplicationController
 
   private
     def set_board
-      params.require(:board).permit(:name)
+      params.require(:board).permit(:title)
 
     end
 
