@@ -1,3 +1,4 @@
+
 <%= form_with(model: @board, local: true) do |form| %>
   <% if @board.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +13,20 @@
   <% end %>
 
   <div class="actions">
-  
     
   <%= form_for @board do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
-
+<br>
+<br>
     <div class="actions">
-    <%= form.submit %>
+        <a class="waves-effect waves-light btn"><%= form.submit %></a>
+
+    
   </div>
   <% end %>
+  <br>
+  <%= link_to 'Back', boards_path %>
 
   
 <% end %>

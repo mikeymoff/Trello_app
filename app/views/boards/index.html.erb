@@ -1,17 +1,25 @@
 <p id="notice"><%= notice %></p>
-<%= button_to "Log Out", destroy_user_session_path, method: :delete %>
+<a class="waves-effect waves-light btn"><%= button_to "Log Out", destroy_user_session_path, method: :delete %></a>
 
-<h1>Boards</h1>
-<h2>Welcome <%= current_user.first_name %></h2>
+
+<h1><%= current_user.first_name %></h1>
+<h2>Welcome to your Boards</h2>
 
 <br>
 <br>
 <br>
 
-<table>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><%= link_to 'New Board', new_board_path %></td>
+<td><%= link_to 'Show All', boards_path %></td>
+</tr>
+
+<table class="striped">
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Board Title</th>
       <th></th>
       <th></th>
     </tr>
@@ -24,12 +32,7 @@
         <td><%= link_to 'Delete', board, method: :delete %></td>
       </tr>
     <% end %>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><%= link_to 'New Board', new_board_path %></td>
-      <td><%= link_to 'Show', boards_path %></td>
-    </tr>
+   
   </tbody>  
 <table>  
   
@@ -39,3 +42,6 @@
 
 <br>
 
+
+<td><a class="waves-effect waves-light btn"><%= button_to 'New Board', new_board_path %></a></td>
+<td><a class="waves-effect waves-light btn"><%= button_to 'Show Boards', boards_path %></a></td>
