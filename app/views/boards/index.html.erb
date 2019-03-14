@@ -11,18 +11,14 @@
 
   <tbody>
       
-        <td><%= link_to 'Add', new_board_path %></td>
+  <%= link_to 'New Board', new_board_path %>
+
         <td><%= link_to 'Show', boards_path %></td>
        
         
-    <% @boards.each do |board| %>
-      <td><%= link_to 'Edit', edit_board_path %></td>
-      <td><%= link_to 'Delete', board_path, method: :destroy %></td>
-
-    <% end %>
+    
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Board', new_board_path %>

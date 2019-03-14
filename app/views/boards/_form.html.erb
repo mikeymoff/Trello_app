@@ -1,17 +1,14 @@
-<%= form_with(model: board, local: true) do |form| %>
-  <% if board.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(board.errors.count, "error") %> prohibited this board from being saved:</h2>
+<%= form_with(model: @board, local: true) do |form| %>
+  
+    
+  <%= form_for @board do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-      <ul>
-      <% board.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
+    <div class="actions">
     <%= form.submit %>
   </div>
+  <% end %>
+
+  
 <% end %>
