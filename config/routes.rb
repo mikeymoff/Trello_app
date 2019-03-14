@@ -7,5 +7,5 @@ devise_for :users
     resources :lists
   end
 
-  
+  resources :users #to: 'users/#id'
 end
