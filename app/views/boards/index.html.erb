@@ -8,21 +8,34 @@
 <br>
 <br>
 
-
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
   <tbody>
-      
-        <td><%= link_to 'Add', new_board_path %></td>
-        <td><%= link_to 'Show', boards_path %></td>
-       
-        
     <% @boards.each do |board| %>
-      <td><%= link_to 'Edit', edit_board_path %></td>
-      <td><%= link_to 'Delete', board_path, method: :destroy %></td>
-
+      <tr>
+        <td><%= board.title %><td>
+        <td><%= link_to 'Edit', edit_board_path(board)%></td>
+        <td><%= link_to 'Delete', board, method: :delete %></td>
+      </tr>
     <% end %>
-  </tbody>
-</table>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><%= link_to 'New Board', new_board_path %></td>
+      <td><%= link_to 'Show', boards_path %></td>
+    </tr>
+  </tbody>  
+<table>  
+  
+<br>
+ 
+       
 
 <br>
 
-<%= link_to 'New Board', new_board_path %>

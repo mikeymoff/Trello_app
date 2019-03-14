@@ -8,4 +8,5 @@ devise_for :users
   end
 
   resources :users #to: 'users/#id'
+  #resources :lists
 end
